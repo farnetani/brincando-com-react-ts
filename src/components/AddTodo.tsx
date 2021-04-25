@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../contexts/TodoContext'
 import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import * as z from 'zod'
 import { TodoContextType } from '../contexts/TodoContextType'
 
 // npm install react-hook-form yup @types/yup @hookform/resolvers
@@ -10,6 +12,9 @@ import { TodoContextType } from '../contexts/TodoContextType'
 const schema = yup.object().shape({
   title: yup.string().required('Tarefa inválida')
 })
+// const schema = z.object({
+//   title: z.string().nonempty({ message: 'Required' })
+// })
 
 interface AddTodoForm {
   title: string
@@ -17,7 +22,12 @@ interface AddTodoForm {
 
 const AddTodo = () => {
   const { addTodo } = useContext<TodoContextType>(TodoContext)
-  const { register, handleSubmit, errors } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    // resolver: zodResolver(schema)
     resolver: yupResolver(schema)
   })
 
@@ -33,11 +43,10 @@ const AddTodo = () => {
       <div className="uk-margin uk-width-1-1">
         <input
           type="text"
-          name="title"
           id="title"
           placeholder="Nova tarefa..."
           className="uk-input"
-          ref={register}
+          {...register('title')}
         />
         <span>
           <small>

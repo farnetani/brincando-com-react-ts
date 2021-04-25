@@ -11735,3 +11735,8 @@ yup@^0.32.9:
     nanoclone "^0.2.1"
     property-expr "^2.0.4"
     toposort "^2.0.2"
+
+zod@^1.11.15:
+  version "1.11.15"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-1.11.15.tgz#14b3c74ffba985ebfdf5fd44628e0612626a29fb"
+  integrity sha512-+32IhkoWn65pTtmao8mp0nuTuuG2AQp7MmKlauEFK6ODu04EHxPDRCo5srG77twzfmpcDC0R5UJbTAVLK/QVMg==
