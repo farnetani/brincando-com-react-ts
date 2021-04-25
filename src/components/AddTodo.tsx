@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../contexts/TodoContext'
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import * as z from 'zod'
 import { TodoContextType } from '../contexts/TodoContextType'
 
 // npm install react-hook-form yup @types/yup @hookform/resolvers
@@ -12,9 +10,6 @@ import { TodoContextType } from '../contexts/TodoContextType'
 const schema = yup.object().shape({
   title: yup.string().required('Tarefa inválida')
 })
-// const schema = z.object({
-//   title: z.string().nonempty({ message: 'Required' })
-// })
 
 interface AddTodoForm {
   title: string
@@ -27,7 +22,6 @@ const AddTodo = () => {
     handleSubmit,
     formState: { errors }
   } = useForm({
-    // resolver: zodResolver(schema)
     resolver: yupResolver(schema)
   })
 
