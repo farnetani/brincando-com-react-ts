@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, ReactNode } from 'react'
 import { TodoContextType } from './TodoContextType'
 import { Todo } from '../models/Todo'
 import { get, save } from '../services/TodoService'
@@ -16,7 +16,11 @@ export const TodoContext = createContext<TodoContextType>({
   }
 })
 
-const TodoProvider = (props: any) => {
+interface TodoProviderProps {
+  children: ReactNode // Esse ReactNode significa que aceita qualquer coisa JSX, ou seja, qualquer coisa dentro dele
+}
+
+const TodoProvider = (props: TodoProviderProps) => {
   const [todos, setTodos] = useState<Todo[]>(get)
 
   useEffect(() => {
