@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "rules": {
+    "prettier/prettier": ["error",
+    {
+      "endOfLine": "auto"
+    }],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off", // Por causa de usarmos o typescript não precisamos dos prop-types
+    "react/react-in-jsx-scope": "off", // Por causa do NEXTJS nao precisamos importar o React o tempo inteiro
+    "@typescript-eslint/explicit-module-boundary-types": "off" // Importante: se o tipo não for definido de forma implícita (3 = number), é importante definir forçadamente
+  }
+}

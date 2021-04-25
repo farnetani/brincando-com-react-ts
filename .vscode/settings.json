@@ -1,0 +1,49 @@
+{
+  "editor.fontFamily": "Monaco",
+  // "editor.fontFamily": "JetBrains Mono",
+  // "editor.fontFamily": "Ubuntu Mono",
+  // "editor.fontFamily": "Inconsolata",
+  // "editor.fontFamily": "Source Code Pro",
+  // "editor.fontFamily": "Consolas",
+  // "editor.fontFamily": "Hack",
+  // "editor.fontFamily": "Fira Code",
+  // "editor.fontFamily": "Cascadia Code",
+  // "editor.fontFamily": "IBM Plex",
+  "editor.fontLigatures": true, // Light
+  "editor.fontSize": 14,
+  "editor.letterSpacing": 0.4,
+  "editor.lineHeight": 24,
+  "editor.fontWeight": "300",
+  // "editor.fontWeight": "400" // Regular
+  // "editor.fontWeight": "500" // Medium
+  // "editor.fontWeight": "600" // Bold
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "material-icon-theme",
+  // RocketSeat
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.compactFolders": false,
+  "editor.renderLineHighlight": "gutter",
+  "workbench.editor.labelFormat": "short",
+  "extensions.ignoreRecommendations": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "breadcrumbs.enabled": true,
+  "editor.parameterHints.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+  },
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "workbench.editor.enablePreview": false,
+  // prettier + eslint
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  }
+}
